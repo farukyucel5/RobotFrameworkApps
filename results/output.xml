@@ -1,87 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.1 (Python 3.11.1 on win32)" generated="20221226 18:08:26.102" rpa="false" schemaversion="3">
+<robot generator="Robot 6.0.1 (Python 3.11.1 on win32)" generated="20221226 23:19:40.212" rpa="false" schemaversion="3">
 <suite id="s1" name="RobotFrameWorkApp" source="C:\Asoftware\RobotFrameWorkApp">
 <suite id="s1-s1" name="Test" source="C:\Asoftware\RobotFrameWorkApp\Test">
-<suite id="s1-s1-s1" name="Ebay" source="C:\Asoftware\RobotFrameWorkApp\Test\Ebay.robot">
-<test id="s1-s1-s1-t1" name="Verify basic search functionality for ebay" line="12">
-<kw name="Starting test case" library="CommonFunctionality" type="SETUP">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>${link to go}</arg>
-<arg>chrome</arg>
+<suite id="s1-s1-s1" name="GalaFurniture" source="C:\Asoftware\RobotFrameWorkApp\Test\GalaFurniture.robot">
+<test id="s1-s1-s1-t1" name="Create a new account" line="11">
+<kw name="Open Browser" library="SeleniumLibrary" type="SETUP">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20221226 18:08:26.520" level="INFO">Opening browser 'chrome' to base url 'https://www.ebay.com/'.</msg>
-<status status="PASS" starttime="20221226 18:08:26.519" endtime="20221226 18:08:32.021"/>
+<msg timestamp="20221226 23:19:41.299" level="INFO">Opening browser 'chrome' to base url 'https://www.galafurn.com/'.</msg>
+<status status="PASS" starttime="20221226 23:19:41.297" endtime="20221226 23:19:46.895"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20221226 18:08:32.022" endtime="20221226 18:08:32.136"/>
+<status status="PASS" starttime="20221226 23:19:46.896" endtime="20221226 23:19:47.014"/>
 </kw>
-<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
-<arg>10 seconds</arg>
-<doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20221226 18:08:32.137" endtime="20221226 18:08:32.139"/>
+<kw name="Click the create link" library="HomePage">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${createAccountLink}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20221226 23:19:47.017" level="INFO">Clicking link '(//a[@id='customer_register_link'])[1]'.</msg>
+<status status="PASS" starttime="20221226 23:19:47.016" endtime="20221226 23:19:48.392"/>
 </kw>
-<status status="PASS" starttime="20221226 18:08:26.518" endtime="20221226 18:08:32.139"/>
-</kw>
-<kw name="Verify search results" library="EbayUserDefinedKeywords">
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${searchBox}</arg>
-<arg>mobile</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20221226 18:08:32.143" level="INFO">Typing text 'mobile' into text field '//input[@placeholder='Search for anything']'.</msg>
-<status status="PASS" starttime="20221226 18:08:32.141" endtime="20221226 18:08:32.382"/>
-</kw>
-<kw name="Press Keys" library="SeleniumLibrary">
-<arg>${submit button}</arg>
-<arg>Return</arg>
-<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20221226 18:08:32.385" level="INFO">Sending key(s) ('Return',) to //input[@id='gh-btn'] element.</msg>
-<msg timestamp="20221226 18:08:35.920" level="INFO">Sending keys Return</msg>
-<status status="PASS" starttime="20221226 18:08:32.383" endtime="20221226 18:08:36.206"/>
-</kw>
-<kw name="Page Should Contain" library="SeleniumLibrary">
-<arg>${text}</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<msg timestamp="20221226 18:08:36.255" level="INFO">Current page contains text 'results for mobile'.</msg>
-<status status="PASS" starttime="20221226 18:08:36.207" endtime="20221226 18:08:36.256"/>
-</kw>
-<status status="PASS" starttime="20221226 18:08:32.140" endtime="20221226 18:08:36.256"/>
-</kw>
-<kw name="Tear down the test" library="CommonFunctionality" type="TEARDOWN">
 <kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
+<arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20221226 18:08:38.260" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20221226 18:08:36.259" endtime="20221226 18:08:38.261"/>
+<msg timestamp="20221226 23:19:51.394" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20221226 23:19:48.393" endtime="20221226 23:19:51.395"/>
 </kw>
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20221226 18:08:38.262" endtime="20221226 18:08:40.600"/>
+<status status="PASS" starttime="20221226 23:19:47.014" endtime="20221226 23:19:51.395"/>
 </kw>
-<status status="PASS" starttime="20221226 18:08:36.258" endtime="20221226 18:08:40.601"/>
+<kw name="Uyelik formunu doldur" library="RegisteredPage">
+<kw name="Name" library="FakerLibrary">
+<var>${fake}</var>
+<doc>:example 'John Doe'</doc>
+<msg timestamp="20221226 23:19:51.401" level="INFO">${fake} = Carolyn Holland</msg>
+<status status="PASS" starttime="20221226 23:19:51.398" endtime="20221226 23:19:51.402"/>
 </kw>
-<doc>this test verifies the basic search for ebay</doc>
-<tag>functional</tag>
-<status status="PASS" starttime="20221226 18:08:26.516" endtime="20221226 18:08:40.602"/>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${firstname}</arg>
+<arg>faruk</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221226 23:19:51.406" level="INFO">Typing text 'faruk' into text field '//input[@id='FirstName']'.</msg>
+<status status="PASS" starttime="20221226 23:19:51.403" endtime="20221226 23:19:51.507"/>
+</kw>
+<status status="PASS" starttime="20221226 23:19:51.397" endtime="20221226 23:19:51.508"/>
+</kw>
+<status status="PASS" starttime="20221226 23:19:41.295" endtime="20221226 23:19:51.509"/>
 </test>
-<doc>Basic search Functionality</doc>
-<status status="PASS" starttime="20221226 18:08:26.159" endtime="20221226 18:08:40.610"/>
+<status status="PASS" starttime="20221226 23:19:40.270" endtime="20221226 23:19:51.511"/>
 </suite>
-<status status="PASS" starttime="20221226 18:08:26.151" endtime="20221226 18:08:40.620"/>
+<status status="PASS" starttime="20221226 23:19:40.261" endtime="20221226 23:19:51.516"/>
 </suite>
-<status status="PASS" starttime="20221226 18:08:26.109" endtime="20221226 18:08:40.626"/>
+<status status="PASS" starttime="20221226 23:19:40.219" endtime="20221226 23:19:51.520"/>
 </suite>
 <statistics>
 <total>
 <stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">functional</stat>
 </tag>
 <suite>
 <stat pass="1" fail="0" skip="0" id="s1" name="RobotFrameWorkApp">RobotFrameWorkApp</stat>
 <stat pass="1" fail="0" skip="0" id="s1-s1" name="Test">RobotFrameWorkApp.Test</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="Ebay">RobotFrameWorkApp.Test.Ebay</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="GalaFurniture">RobotFrameWorkApp.Test.GalaFurniture</stat>
 </suite>
 </statistics>
 <errors>
