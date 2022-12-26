@@ -1,69 +1,118 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.1 (Python 3.11.1 on win32)" generated="20221226 23:19:40.212" rpa="false" schemaversion="3">
+<robot generator="Robot 6.0.1 (Python 3.11.1 on win32)" generated="20221227 00:14:35.348" rpa="false" schemaversion="3">
 <suite id="s1" name="RobotFrameWorkApp" source="C:\Asoftware\RobotFrameWorkApp">
 <suite id="s1-s1" name="Test" source="C:\Asoftware\RobotFrameWorkApp\Test">
 <suite id="s1-s1-s1" name="GalaFurniture" source="C:\Asoftware\RobotFrameWorkApp\Test\GalaFurniture.robot">
-<test id="s1-s1-s1-t1" name="Create a new account" line="11">
+<test id="s1-s1-s1-t1" name="Create a new account" line="10">
 <kw name="Open Browser" library="SeleniumLibrary" type="SETUP">
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20221226 23:19:41.299" level="INFO">Opening browser 'chrome' to base url 'https://www.galafurn.com/'.</msg>
-<status status="PASS" starttime="20221226 23:19:41.297" endtime="20221226 23:19:46.895"/>
+<msg timestamp="20221227 00:14:36.458" level="INFO">Opening browser 'chrome' to base url 'https://www.galafurn.com/'.</msg>
+<status status="PASS" starttime="20221227 00:14:36.456" endtime="20221227 00:14:44.521"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20221226 23:19:46.896" endtime="20221226 23:19:47.014"/>
+<status status="PASS" starttime="20221227 00:14:44.522" endtime="20221227 00:14:44.643"/>
 </kw>
 <kw name="Click the create link" library="HomePage">
 <kw name="Click Link" library="SeleniumLibrary">
 <arg>${createAccountLink}</arg>
 <doc>Clicks a link identified by ``locator``.</doc>
-<msg timestamp="20221226 23:19:47.017" level="INFO">Clicking link '(//a[@id='customer_register_link'])[1]'.</msg>
-<status status="PASS" starttime="20221226 23:19:47.016" endtime="20221226 23:19:48.392"/>
+<msg timestamp="20221227 00:14:44.650" level="INFO">Clicking link '(//a[@id='customer_register_link'])[1]'.</msg>
+<status status="PASS" starttime="20221227 00:14:44.646" endtime="20221227 00:14:45.721"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20221226 23:19:51.394" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20221226 23:19:48.393" endtime="20221226 23:19:51.395"/>
+<msg timestamp="20221227 00:14:48.722" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20221227 00:14:45.721" endtime="20221227 00:14:48.724"/>
 </kw>
-<status status="PASS" starttime="20221226 23:19:47.014" endtime="20221226 23:19:51.395"/>
+<status status="PASS" starttime="20221227 00:14:44.644" endtime="20221227 00:14:48.726"/>
 </kw>
 <kw name="Uyelik formunu doldur" library="RegisteredPage">
 <kw name="Name" library="FakerLibrary">
 <var>${fake}</var>
 <doc>:example 'John Doe'</doc>
-<msg timestamp="20221226 23:19:51.401" level="INFO">${fake} = Carolyn Holland</msg>
-<status status="PASS" starttime="20221226 23:19:51.398" endtime="20221226 23:19:51.402"/>
+<msg timestamp="20221227 00:14:48.736" level="INFO">${fake} = Adam Horton</msg>
+<status status="PASS" starttime="20221227 00:14:48.732" endtime="20221227 00:14:48.740"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${firstname}</arg>
-<arg>faruk</arg>
+<arg>${fake}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20221226 23:19:51.406" level="INFO">Typing text 'faruk' into text field '//input[@id='FirstName']'.</msg>
-<status status="PASS" starttime="20221226 23:19:51.403" endtime="20221226 23:19:51.507"/>
+<msg timestamp="20221227 00:14:48.747" level="INFO">Typing text 'Adam Horton' into text field '//input[@id='FirstName']'.</msg>
+<status status="PASS" starttime="20221227 00:14:48.741" endtime="20221227 00:14:48.890"/>
 </kw>
-<status status="PASS" starttime="20221226 23:19:51.397" endtime="20221226 23:19:51.508"/>
+<kw name="Last Name" library="FakerLibrary">
+<var>${fake2}</var>
+<msg timestamp="20221227 00:14:48.891" level="INFO">${fake2} = Moore</msg>
+<status status="PASS" starttime="20221227 00:14:48.890" endtime="20221227 00:14:48.892"/>
 </kw>
-<status status="PASS" starttime="20221226 23:19:41.295" endtime="20221226 23:19:51.509"/>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${lastname}</arg>
+<arg>${fake2}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221227 00:14:48.894" level="INFO">Typing text 'Moore' into text field '//input[@id='LastName']'.</msg>
+<status status="PASS" starttime="20221227 00:14:48.892" endtime="20221227 00:14:49.029"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${email}</arg>
+<arg>${emailStr}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221227 00:14:49.031" level="INFO">Typing text 'farukyucel7@hotmail.com' into text field '//input[@id='Email']'.</msg>
+<status status="PASS" starttime="20221227 00:14:49.029" endtime="20221227 00:14:49.188"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${password}</arg>
+<arg>${passwordStr}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20221227 00:14:49.189" level="INFO">Typing password into text field '//input[@id='CreatePassword']'.</msg>
+<msg timestamp="20221227 00:14:49.250" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20221227 00:14:49.318" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20221227 00:14:49.188" endtime="20221227 00:14:49.319"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${createButonu}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20221227 00:14:49.320" level="INFO">Clicking button '//input[@value='Create']'.</msg>
+<status status="PASS" starttime="20221227 00:14:49.319" endtime="20221227 00:14:51.803"/>
+</kw>
+<status status="PASS" starttime="20221227 00:14:48.730" endtime="20221227 00:14:51.804"/>
+</kw>
+<kw name="Confirm the sign up" library="HomePage">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${logoutBtn}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20221227 00:14:51.983" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20221227 00:14:51.984" level="FAIL">Element with locator '.wrapper #customer_logout_link' not found.</msg>
+<status status="FAIL" starttime="20221227 00:14:51.807" endtime="20221227 00:14:51.990"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20221227 00:14:51.991" endtime="20221227 00:14:51.991"/>
+</kw>
+<status status="FAIL" starttime="20221227 00:14:51.805" endtime="20221227 00:14:51.992"/>
+</kw>
+<status status="FAIL" starttime="20221227 00:14:36.453" endtime="20221227 00:14:51.994">Element with locator '.wrapper #customer_logout_link' not found.</status>
 </test>
-<status status="PASS" starttime="20221226 23:19:40.270" endtime="20221226 23:19:51.511"/>
+<status status="FAIL" starttime="20221227 00:14:35.419" endtime="20221227 00:14:51.997"/>
 </suite>
-<status status="PASS" starttime="20221226 23:19:40.261" endtime="20221226 23:19:51.516"/>
+<status status="FAIL" starttime="20221227 00:14:35.409" endtime="20221227 00:14:52.002"/>
 </suite>
-<status status="PASS" starttime="20221226 23:19:40.219" endtime="20221226 23:19:51.520"/>
+<status status="FAIL" starttime="20221227 00:14:35.358" endtime="20221227 00:14:52.007"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="RobotFrameWorkApp">RobotFrameWorkApp</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1" name="Test">RobotFrameWorkApp.Test</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="GalaFurniture">RobotFrameWorkApp.Test.GalaFurniture</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="RobotFrameWorkApp">RobotFrameWorkApp</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Test">RobotFrameWorkApp.Test</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="GalaFurniture">RobotFrameWorkApp.Test.GalaFurniture</stat>
 </suite>
 </statistics>
 <errors>
