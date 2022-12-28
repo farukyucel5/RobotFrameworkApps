@@ -1,9 +1,14 @@
 # Homepage locators
-createAccountLink = "(//a[@id='customer_register_link'])[1]"
-logoutBtn = ".wrapper #customer_logout_link"
+createAccountLink = "(//a[@class='header-top__link'])[2]"
+logoutBtn = "(//a[@class='header-top__link'])[1]"
+loginBtn = "//*[text()='Log in']"
 # Registeredpage locator
-firstname = "//input[@id='FirstName']"
-lastname = "//input[@id='LastName']"
-email = "//input[@id='Email']"
-password = "//input[@id='CreatePassword']"
-createButonu = "//input[@value='Create']"
+firstname = "//input[@id='CreateCustomerForm-firstname']"
+lastname = "//input[@id='CreateCustomerForm-lastname']"
+email = "//input[@id='CreateCustomerForm-email']"
+password = "//input[@id='CreateCustomerForm-password']"
+createButonu = "//button[@class='button button--cta button--solid']"
+# loginPage locators
+emailInput = "id=CustomerForm-email"
+passwordInput = "id=CustomerForm-password"
+signUpBtn = "(//button[@class='button button--cta button--solid'])[2]"

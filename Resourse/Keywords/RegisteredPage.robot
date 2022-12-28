@@ -12,7 +12,9 @@ Uyelik formunu doldur
     ${fake2}    FakerLibrary.Last Name
     Input Text    ${lastname}    ${fake2}
 
-    Input Text    ${email}    ${emailStr}
+    ${fake3}    FakerLibrary.Email
+    Input Text    ${email}    ${fake3}
+    ${fake4}    FakerLibrary.Password    
     Input Password    ${password}    ${passwordStr}
 
     Click Button    ${createButonu}
