@@ -1,130 +1,124 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.1 (Python 3.11.1 on win32)" generated="20221229 00:51:35.502" rpa="false" schemaversion="3">
+<robot generator="Robot 6.0.1 (Python 3.11.1 on win32)" generated="20230110 19:55:07.157" rpa="false" schemaversion="3">
 <suite id="s1" name="RobotFrameWorkApp" source="C:\Asoftware\RobotFrameWorkApp">
 <suite id="s1-s1" name="Test" source="C:\Asoftware\RobotFrameWorkApp\Test">
-<suite id="s1-s1-s1" name="GalaFurniture" source="C:\Asoftware\RobotFrameWorkApp\Test\GalaFurniture.robot">
-<test id="s1-s1-s1-t1" name="Create a new account" line="12">
-<kw name="Open Browser" library="SeleniumLibrary" type="SETUP">
-<arg>${URL}</arg>
-<arg>${BROWSER}</arg>
+<suite id="s1-s1-s1" name="Ebay filter Search" source="C:\Asoftware\RobotFrameWorkApp\Test\Ebay_filter_Search.robot">
+<test id="s1-s1-s1-t1" name="Ebay fiter test" line="9">
+<kw name="Starting test case" library="CommonFunctionality">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${link to go}</arg>
+<arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20221229 00:51:36.645" level="INFO">Opening browser 'chrome' to base url 'https://www.galafurn.com/'.</msg>
-<status status="PASS" starttime="20221229 00:51:36.643" endtime="20221229 00:51:44.128"/>
+<msg timestamp="20230110 19:55:07.570" level="INFO">Opening browser 'chrome' to base url 'https://www.ebay.com/'.</msg>
+<status status="PASS" starttime="20230110 19:55:07.568" endtime="20230110 19:55:13.297"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20221229 00:51:44.129" endtime="20221229 00:51:44.452"/>
+<status status="PASS" starttime="20230110 19:55:13.298" endtime="20230110 19:55:13.416"/>
 </kw>
-<kw name="Click the create link" library="HomePage">
-<kw name="Click Link" library="SeleniumLibrary">
-<arg>${createAccountLink}</arg>
-<doc>Clicks a link identified by ``locator``.</doc>
-<msg timestamp="20221229 00:51:44.457" level="INFO">Clicking link '(//a[@class='header-top__link'])[2]'.</msg>
-<status status="PASS" starttime="20221229 00:51:44.455" endtime="20221229 00:51:45.634"/>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>10 seconds</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20230110 19:55:13.416" endtime="20230110 19:55:13.419"/>
 </kw>
+<status status="PASS" starttime="20230110 19:55:07.566" endtime="20230110 19:55:13.420"/>
+</kw>
+<kw name="Verify search results" library="EbayUserDefinedKeywords">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${searchBox}</arg>
+<arg>mobile</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230110 19:55:13.425" level="INFO">Typing text 'mobile' into text field '//input[@placeholder='Search for anything']'.</msg>
+<status status="PASS" starttime="20230110 19:55:13.422" endtime="20230110 19:55:13.706"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${submit button}</arg>
+<arg>Return</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20230110 19:55:13.709" level="INFO">Sending key(s) ('Return',) to //input[@id='gh-btn'] element.</msg>
+<msg timestamp="20230110 19:55:17.067" level="INFO">Sending keys Return</msg>
+<status status="PASS" starttime="20230110 19:55:13.707" endtime="20230110 19:55:17.380"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${text}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20230110 19:55:17.420" level="INFO">Current page contains text 'results for mobile'.</msg>
+<status status="PASS" starttime="20230110 19:55:17.380" endtime="20230110 19:55:17.420"/>
+</kw>
+<status status="PASS" starttime="20230110 19:55:13.421" endtime="20230110 19:55:17.421"/>
+</kw>
+<kw name="Filter results by condition" library="EbayUserDefinedKeywords">
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${condition}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20230110 19:55:17.425" level="INFO">Simulating Mouse Over on element '//span[text()='Condition']'.</msg>
+<status status="PASS" starttime="20230110 19:55:17.423" endtime="20230110 19:55:17.730"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${condition}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230110 19:55:17.732" level="INFO">Clicking element '//span[text()='Condition']'.</msg>
+<status status="PASS" starttime="20230110 19:55:17.730" endtime="20230110 19:55:17.841"/>
+</kw>
+<kw name="Mouse Down" library="SeleniumLibrary">
+<arg>${filter new}</arg>
+<doc>Simulates pressing the left mouse button on the element ``locator``.</doc>
+<msg timestamp="20230110 19:55:17.844" level="INFO">Simulating Mouse Down on element '(//span[text()='New'])[2]'.</msg>
+<status status="PASS" starttime="20230110 19:55:17.842" endtime="20230110 19:55:18.241"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${filter new}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230110 19:55:18.242" level="INFO">Clicking element '(//span[text()='New'])[2]'.</msg>
+<status status="PASS" starttime="20230110 19:55:18.241" endtime="20230110 19:55:20.668"/>
+</kw>
+<status status="PASS" starttime="20230110 19:55:17.422" endtime="20230110 19:55:20.669"/>
+</kw>
+<kw name="Verify filter results" library="EbayUserDefinedKeywords">
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${verifyNew}</arg>
+<arg>New</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20230110 19:55:20.995" level="INFO">Element '//div[text()='New']' contains text 'New'.</msg>
+<status status="PASS" starttime="20230110 19:55:20.671" endtime="20230110 19:55:20.995"/>
+</kw>
+<status status="PASS" starttime="20230110 19:55:20.670" endtime="20230110 19:55:20.996"/>
+</kw>
+<kw name="Tear down the test" library="CommonFunctionality">
 <kw name="Sleep" library="BuiltIn">
-<arg>3s</arg>
+<arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20221229 00:51:48.636" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20221229 00:51:45.634" endtime="20221229 00:51:48.637"/>
+<msg timestamp="20230110 19:55:23.001" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230110 19:55:20.999" endtime="20230110 19:55:23.002"/>
 </kw>
-<status status="PASS" starttime="20221229 00:51:44.453" endtime="20221229 00:51:48.639"/>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230110 19:55:23.002" endtime="20230110 19:55:25.322"/>
 </kw>
-<kw name="Uyelik formunu doldur" library="RegisteredPage">
-<kw name="Name" library="FakerLibrary">
-<var>${fake}</var>
-<doc>:example 'John Doe'</doc>
-<msg timestamp="20221229 00:51:48.648" level="INFO">${fake} = William Lewis</msg>
-<status status="PASS" starttime="20221229 00:51:48.645" endtime="20221229 00:51:48.652"/>
+<status status="PASS" starttime="20230110 19:55:20.998" endtime="20230110 19:55:25.323"/>
 </kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${firstname}</arg>
-<arg>${fake}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20221229 00:51:48.657" level="INFO">Typing text 'William Lewis' into text field '//input[@id='CreateCustomerForm-firstname']'.</msg>
-<status status="PASS" starttime="20221229 00:51:48.652" endtime="20221229 00:51:48.804"/>
-</kw>
-<kw name="Last Name" library="FakerLibrary">
-<var>${fake2}</var>
-<msg timestamp="20221229 00:51:48.806" level="INFO">${fake2} = Carter</msg>
-<status status="PASS" starttime="20221229 00:51:48.805" endtime="20221229 00:51:48.807"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${lastname}</arg>
-<arg>${fake2}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20221229 00:51:48.809" level="INFO">Typing text 'Carter' into text field '//input[@id='CreateCustomerForm-lastname']'.</msg>
-<status status="PASS" starttime="20221229 00:51:48.807" endtime="20221229 00:51:48.970"/>
-</kw>
-<kw name="Email" library="FakerLibrary">
-<var>${fake3}</var>
-<msg timestamp="20221229 00:51:48.972" level="INFO">${fake3} = krystal40@example.net</msg>
-<status status="PASS" starttime="20221229 00:51:48.970" endtime="20221229 00:51:48.972"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${email}</arg>
-<arg>${fake3}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20221229 00:51:48.978" level="INFO">Typing text 'krystal40@example.net' into text field '//input[@id='CreateCustomerForm-email']'.</msg>
-<status status="PASS" starttime="20221229 00:51:48.973" endtime="20221229 00:51:49.213"/>
-</kw>
-<kw name="Password" library="FakerLibrary">
-<var>${fake4}</var>
-<doc>Generate a random password of the specified ``length``.</doc>
-<msg timestamp="20221229 00:51:49.216" level="INFO">${fake4} = Ht0Av9hj(o</msg>
-<status status="PASS" starttime="20221229 00:51:49.215" endtime="20221229 00:51:49.216"/>
-</kw>
-<kw name="Input Password" library="SeleniumLibrary">
-<arg>${password}</arg>
-<arg>${passwordStr}</arg>
-<doc>Types the given password into the text field identified by ``locator``.</doc>
-<msg timestamp="20221229 00:51:49.218" level="INFO">Typing password into text field '//input[@id='CreateCustomerForm-password']'.</msg>
-<msg timestamp="20221229 00:51:49.287" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20221229 00:51:49.350" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20221229 00:51:49.216" endtime="20221229 00:51:49.350"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${createButonu}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20221229 00:51:49.352" level="INFO">Clicking button '//button[@class='button button--cta button--solid']'.</msg>
-<status status="PASS" starttime="20221229 00:51:49.351" endtime="20221229 00:51:51.904"/>
-</kw>
-<status status="PASS" starttime="20221229 00:51:48.642" endtime="20221229 00:51:51.905"/>
-</kw>
-<kw name="Logout should be visible" library="HomePage">
-<kw name="Element Should Be Visible" library="SeleniumLibrary">
-<arg>${logoutBtn}</arg>
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<msg timestamp="20221229 00:51:52.073" level="INFO">Element '(//a[@class='header-top__link'])[1]' is displayed.</msg>
-<status status="PASS" starttime="20221229 00:51:51.907" endtime="20221229 00:51:52.074"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>3s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20221229 00:51:55.076" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20221229 00:51:52.074" endtime="20221229 00:51:55.076"/>
-</kw>
-<status status="PASS" starttime="20221229 00:51:51.906" endtime="20221229 00:51:55.077"/>
-</kw>
-<status status="PASS" starttime="20221229 00:51:36.630" endtime="20221229 00:51:55.078"/>
+<doc>This test case verify the filtered data</doc>
+<tag>functional</tag>
+<status status="PASS" starttime="20230110 19:55:07.564" endtime="20230110 19:55:25.325"/>
 </test>
-<doc>Gala furniture website test case</doc>
-<status status="PASS" starttime="20221229 00:51:35.570" endtime="20221229 00:51:55.082"/>
+<doc>Basic search Functionality</doc>
+<status status="PASS" starttime="20230110 19:55:07.214" endtime="20230110 19:55:25.332"/>
 </suite>
-<status status="PASS" starttime="20221229 00:51:35.563" endtime="20221229 00:51:55.087"/>
+<status status="PASS" starttime="20230110 19:55:07.205" endtime="20230110 19:55:25.343"/>
 </suite>
-<status status="PASS" starttime="20221229 00:51:35.512" endtime="20221229 00:51:55.093"/>
+<status status="PASS" starttime="20230110 19:55:07.166" endtime="20230110 19:55:25.348"/>
 </suite>
 <statistics>
 <total>
 <stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
+<stat pass="1" fail="0" skip="0">functional</stat>
 </tag>
 <suite>
 <stat pass="1" fail="0" skip="0" id="s1" name="RobotFrameWorkApp">RobotFrameWorkApp</stat>
 <stat pass="1" fail="0" skip="0" id="s1-s1" name="Test">RobotFrameWorkApp.Test</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="GalaFurniture">RobotFrameWorkApp.Test.GalaFurniture</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="Ebay filter Search">RobotFrameWorkApp.Test.Ebay filter Search</stat>
 </suite>
 </statistics>
 <errors>
