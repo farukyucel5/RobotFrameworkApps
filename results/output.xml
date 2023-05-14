@@ -1,112 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.1 (Python 3.11.1 on win32)" generated="20230110 19:55:07.157" rpa="false" schemaversion="3">
-<suite id="s1" name="RobotFrameWorkApp" source="C:\Asoftware\RobotFrameWorkApp">
-<suite id="s1-s1" name="Test" source="C:\Asoftware\RobotFrameWorkApp\Test">
-<suite id="s1-s1-s1" name="Ebay filter Search" source="C:\Asoftware\RobotFrameWorkApp\Test\Ebay_filter_Search.robot">
+<robot generator="Robot 6.0.2 (Python 3.11.3 on win32)" generated="20230514 15:37:31.658" rpa="false" schemaversion="3">
+<suite id="s1" name="RobotFrameWorkApp" source="C:\ZLenovo\Asoftware\RobotFrameWorkApp">
+<suite id="s1-s1" name="Test" source="C:\ZLenovo\Asoftware\RobotFrameWorkApp\Test">
+<suite id="s1-s1-s1" name="Ebay filter Search" source="C:\ZLenovo\Asoftware\RobotFrameWorkApp\Test\Ebay_filter_Search.robot">
 <test id="s1-s1-s1-t1" name="Ebay fiter test" line="9">
 <kw name="Starting test case" library="CommonFunctionality">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${link to go}</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230110 19:55:07.570" level="INFO">Opening browser 'chrome' to base url 'https://www.ebay.com/'.</msg>
-<status status="PASS" starttime="20230110 19:55:07.568" endtime="20230110 19:55:13.297"/>
+<msg timestamp="20230514 15:37:31.846" level="INFO">Opening browser 'chrome' to base url 'https://www.ebay.com/'.</msg>
+<msg timestamp="20230514 15:37:31.846" level="INFO">Applicable driver not found; attempting to install with Selenium Manager (Beta)</msg>
+<status status="PASS" starttime="20230514 15:37:31.843" endtime="20230514 15:37:46.120"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20230110 19:55:13.298" endtime="20230110 19:55:13.416"/>
+<status status="PASS" starttime="20230514 15:37:46.121" endtime="20230514 15:37:46.236"/>
 </kw>
 <kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
 <arg>10 seconds</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20230110 19:55:13.416" endtime="20230110 19:55:13.419"/>
+<status status="PASS" starttime="20230514 15:37:46.236" endtime="20230514 15:37:46.236"/>
 </kw>
-<status status="PASS" starttime="20230110 19:55:07.566" endtime="20230110 19:55:13.420"/>
+<status status="PASS" starttime="20230514 15:37:31.843" endtime="20230514 15:37:46.236"/>
 </kw>
 <kw name="Verify search results" library="EbayUserDefinedKeywords">
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${searchBox}</arg>
 <arg>mobile</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230110 19:55:13.425" level="INFO">Typing text 'mobile' into text field '//input[@placeholder='Search for anything']'.</msg>
-<status status="PASS" starttime="20230110 19:55:13.422" endtime="20230110 19:55:13.706"/>
+<msg timestamp="20230514 15:37:46.236" level="INFO">Typing text 'mobile' into text field '//input[@placeholder='Search for anything']'.</msg>
+<status status="PASS" starttime="20230514 15:37:46.236" endtime="20230514 15:37:46.341"/>
 </kw>
 <kw name="Press Keys" library="SeleniumLibrary">
 <arg>${submit button}</arg>
 <arg>Return</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20230110 19:55:13.709" level="INFO">Sending key(s) ('Return',) to //input[@id='gh-btn'] element.</msg>
-<msg timestamp="20230110 19:55:17.067" level="INFO">Sending keys Return</msg>
-<status status="PASS" starttime="20230110 19:55:13.707" endtime="20230110 19:55:17.380"/>
+<msg timestamp="20230514 15:37:46.341" level="INFO">Sending key(s) ('Return',) to //input[@id='gh-btn'] element.</msg>
+<msg timestamp="20230514 15:37:49.979" level="INFO">Sending keys Return</msg>
+<status status="PASS" starttime="20230514 15:37:46.341" endtime="20230514 15:37:50.065"/>
 </kw>
 <kw name="Page Should Contain" library="SeleniumLibrary">
 <arg>${text}</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<msg timestamp="20230110 19:55:17.420" level="INFO">Current page contains text 'results for mobile'.</msg>
-<status status="PASS" starttime="20230110 19:55:17.380" endtime="20230110 19:55:17.420"/>
+<msg timestamp="20230514 15:37:50.075" level="INFO">Current page contains text 'results for mobile'.</msg>
+<status status="PASS" starttime="20230514 15:37:50.065" endtime="20230514 15:37:50.075"/>
 </kw>
-<status status="PASS" starttime="20230110 19:55:13.421" endtime="20230110 19:55:17.421"/>
+<status status="PASS" starttime="20230514 15:37:46.236" endtime="20230514 15:37:50.075"/>
 </kw>
 <kw name="Filter results by condition" library="EbayUserDefinedKeywords">
 <kw name="Mouse Over" library="SeleniumLibrary">
 <arg>${condition}</arg>
 <doc>Simulates hovering the mouse over the element ``locator``.</doc>
-<msg timestamp="20230110 19:55:17.425" level="INFO">Simulating Mouse Over on element '//span[text()='Condition']'.</msg>
-<status status="PASS" starttime="20230110 19:55:17.423" endtime="20230110 19:55:17.730"/>
+<msg timestamp="20230514 15:37:50.075" level="INFO">Simulating Mouse Over on element '//span[text()='Condition']'.</msg>
+<status status="PASS" starttime="20230514 15:37:50.075" endtime="20230514 15:37:50.370"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${condition}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230110 19:55:17.732" level="INFO">Clicking element '//span[text()='Condition']'.</msg>
-<status status="PASS" starttime="20230110 19:55:17.730" endtime="20230110 19:55:17.841"/>
+<msg timestamp="20230514 15:37:50.370" level="INFO">Clicking element '//span[text()='Condition']'.</msg>
+<status status="PASS" starttime="20230514 15:37:50.370" endtime="20230514 15:37:50.416"/>
 </kw>
 <kw name="Mouse Down" library="SeleniumLibrary">
 <arg>${filter new}</arg>
 <doc>Simulates pressing the left mouse button on the element ``locator``.</doc>
-<msg timestamp="20230110 19:55:17.844" level="INFO">Simulating Mouse Down on element '(//span[text()='New'])[2]'.</msg>
-<status status="PASS" starttime="20230110 19:55:17.842" endtime="20230110 19:55:18.241"/>
+<msg timestamp="20230514 15:37:50.416" level="INFO">Simulating Mouse Down on element '(//span[text()='New'])[2]'.</msg>
+<status status="PASS" starttime="20230514 15:37:50.416" endtime="20230514 15:37:50.737"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${filter new}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230110 19:55:18.242" level="INFO">Clicking element '(//span[text()='New'])[2]'.</msg>
-<status status="PASS" starttime="20230110 19:55:18.241" endtime="20230110 19:55:20.668"/>
+<msg timestamp="20230514 15:37:50.737" level="INFO">Clicking element '(//span[text()='New'])[2]'.</msg>
+<status status="PASS" starttime="20230514 15:37:50.737" endtime="20230514 15:37:52.612"/>
 </kw>
-<status status="PASS" starttime="20230110 19:55:17.422" endtime="20230110 19:55:20.669"/>
+<status status="PASS" starttime="20230514 15:37:50.075" endtime="20230514 15:37:52.612"/>
 </kw>
 <kw name="Verify filter results" library="EbayUserDefinedKeywords">
 <kw name="Element Should Contain" library="SeleniumLibrary">
 <arg>${verifyNew}</arg>
 <arg>New</arg>
 <doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<msg timestamp="20230110 19:55:20.995" level="INFO">Element '//div[text()='New']' contains text 'New'.</msg>
-<status status="PASS" starttime="20230110 19:55:20.671" endtime="20230110 19:55:20.995"/>
+<msg timestamp="20230514 15:37:52.749" level="INFO">Element '//div[text()='New']' contains text 'New'.</msg>
+<status status="PASS" starttime="20230514 15:37:52.612" endtime="20230514 15:37:52.749"/>
 </kw>
-<status status="PASS" starttime="20230110 19:55:20.670" endtime="20230110 19:55:20.996"/>
+<status status="PASS" starttime="20230514 15:37:52.612" endtime="20230514 15:37:52.749"/>
 </kw>
 <kw name="Tear down the test" library="CommonFunctionality">
 <kw name="Sleep" library="BuiltIn">
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230110 19:55:23.001" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20230110 19:55:20.999" endtime="20230110 19:55:23.002"/>
+<msg timestamp="20230514 15:37:54.749" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230514 15:37:52.749" endtime="20230514 15:37:54.749"/>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20230110 19:55:23.002" endtime="20230110 19:55:25.322"/>
+<status status="PASS" starttime="20230514 15:37:54.749" endtime="20230514 15:37:56.852"/>
 </kw>
-<status status="PASS" starttime="20230110 19:55:20.998" endtime="20230110 19:55:25.323"/>
+<status status="PASS" starttime="20230514 15:37:52.749" endtime="20230514 15:37:56.852"/>
 </kw>
 <doc>This test case verify the filtered data</doc>
 <tag>functional</tag>
-<status status="PASS" starttime="20230110 19:55:07.564" endtime="20230110 19:55:25.325"/>
+<status status="PASS" starttime="20230514 15:37:31.843" endtime="20230514 15:37:56.852"/>
 </test>
 <doc>Basic search Functionality</doc>
-<status status="PASS" starttime="20230110 19:55:07.214" endtime="20230110 19:55:25.332"/>
+<status status="PASS" starttime="20230514 15:37:31.698" endtime="20230514 15:37:56.852"/>
 </suite>
-<status status="PASS" starttime="20230110 19:55:07.205" endtime="20230110 19:55:25.343"/>
+<status status="PASS" starttime="20230514 15:37:31.698" endtime="20230514 15:37:56.867"/>
 </suite>
-<status status="PASS" starttime="20230110 19:55:07.166" endtime="20230110 19:55:25.348"/>
+<status status="PASS" starttime="20230514 15:37:31.666" endtime="20230514 15:37:56.867"/>
 </suite>
 <statistics>
 <total>
